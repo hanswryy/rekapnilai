@@ -6,5 +6,5 @@ public class Kelas{
 	public void setMhs(Mahasiswa mhs[]) {
 		this.mhs = mhs;
 	}
-	
+
 }
