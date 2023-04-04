@@ -1,4 +1,4 @@
-package com.k4.rekapnilai;
+package com.k4.rekapnilai.model;
 
 public class Mahasiswa{
 	private byte jml_nilai;
