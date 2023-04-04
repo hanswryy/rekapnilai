@@ -6,7 +6,7 @@ public enum MhsGrade {
 	B(80),
 	BC(75),
 	C(70),
-	D(60),
+	D(50),
 	E(0);
 	
 	private int minScore;
