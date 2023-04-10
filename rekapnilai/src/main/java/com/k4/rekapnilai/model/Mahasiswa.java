@@ -96,7 +96,7 @@ public class Mahasiswa{
 	}
 
 	public MhsGrade getGrade() {
-		return grade;
+		return MhsGrade.getGrade(this.nilaiAvr);
 	}
 
 	public void setGrade(MhsGrade grade) {
