@@ -15,7 +15,7 @@ public enum MhsGrade {
 		this.minScore = minScore;
 	}
 	
-	public static MhsGrade getGrade(int score) {
+	public static MhsGrade getGrade(double score) {
 		if (score >= A.minScore) {
 			return A;
 		} else if (score >= AB.minScore) {
