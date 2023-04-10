@@ -20,8 +20,9 @@ public class MahasiswaService {
         mahasiswaRepository.insert(mahasiswa);
     }
 
-    public void deleteMahasiswa() {
+    public void deleteMahasiswa(String Id) {
         //Method untuk menghapus mahasiswa
+        mahasiswaRepository.deleteById(Id);
     }
 
     public void updateMahasiswa(Mahasiswa mahasiswa) {
@@ -33,6 +34,10 @@ public class MahasiswaService {
         savedMahasiswa.setNamaMhs(mahasiswa.getNamaMhs());
         savedMahasiswa.setNIM(mahasiswa.getNIM());
         savedMahasiswa.setKelas(mahasiswa.getKelas());
+        savedMahasiswa.setNilaiUas(mahasiswa.getNilaiUas());
+        savedMahasiswa.setNilaiUts(mahasiswa.getNilaiUts());
+        savedMahasiswa.setNilaiTugas(mahasiswa.getNilaiTugas());
+        savedMahasiswa.setNilaiAkhir(mahasiswa.getNilaiAkhir());
 
         mahasiswaRepository.save(savedMahasiswa);
     }
@@ -40,10 +45,6 @@ public class MahasiswaService {
     public List<Mahasiswa> getAllMahasiswa() {
         //Method untuk mengambil semua mahasiswa
         return mahasiswaRepository.findAll();
-    }
-
-    public void getMahasiswaByName() {
-        //Method untuk mengambil mahasiswa berdasarkan nama
     }
 
 }

@@ -128,6 +128,10 @@ public class Mahasiswa{
 	public void setKelas(String kelas) {
 		this.kelas = kelas;
 	}
+
+	public void setNilaiAkhir(double nilaiAkhir) {
+		this.nilaiAkhir = nilaiAkhir;
+	}
 	
 	public double getNilaiAkhir() {
 		nilaiAkhir = (30*nilaiTugas/100) + (30*nilaiUts/100) + (40*nilaiUas/100);
