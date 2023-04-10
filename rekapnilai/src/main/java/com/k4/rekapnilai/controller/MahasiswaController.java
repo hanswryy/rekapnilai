@@ -25,8 +25,11 @@ public class MahasiswaController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    public void deleteMahasiswa() {
+    @DeleteMapping("/{id}")
+    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
         //Method untuk menghapus mahasiswa
+        mahasiswaService.deleteMahasiswa(id);
+        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
     }
 
     @PutMapping
@@ -40,10 +43,6 @@ public class MahasiswaController {
     public ResponseEntity<List<Mahasiswa>> getAllMahasiswa() {
         //Method untuk mengambil semua mahasiswa
         return ResponseEntity.ok(mahasiswaService.getAllMahasiswa());
-    }
-
-    public void getMahasiswaByName() {
-        //Method untuk mengambil mahasiswa berdasarkan nama
     }
 
 }
