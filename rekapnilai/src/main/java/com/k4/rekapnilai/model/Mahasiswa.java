@@ -28,6 +28,8 @@ public class Mahasiswa{
 	private String NIM;
 	@Field(name = "kelas")
 	private String kelas;
+	@Field(name = "nilai_akhir")
+	private double nilaiAkhir;
 
 	public void addMahasiswa(String namaMhs, String NIM, String kelas) {
 		this.setNamaMhs(namaMhs);
@@ -125,5 +127,10 @@ public class Mahasiswa{
 
 	public void setKelas(String kelas) {
 		this.kelas = kelas;
+	}
+	
+	public double getNilaiAkhir() {
+		nilaiAkhir = (30*nilaiTugas/100) + (30*nilaiUts/100) + (40*nilaiUas/100);
+		return nilaiAkhir;
 	}
 }
