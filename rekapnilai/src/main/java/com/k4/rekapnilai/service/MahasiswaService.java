@@ -37,7 +37,6 @@ public class MahasiswaService {
         savedMahasiswa.setNilaiUas(mahasiswa.getNilaiUas());
         savedMahasiswa.setNilaiUts(mahasiswa.getNilaiUts());
         savedMahasiswa.setNilaiTugas(mahasiswa.getNilaiTugas());
-        savedMahasiswa.setNilaiAkhir(mahasiswa.getNilaiAkhir());
 
         mahasiswaRepository.save(savedMahasiswa);
     }
