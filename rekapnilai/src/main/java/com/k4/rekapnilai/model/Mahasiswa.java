@@ -9,18 +9,14 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class Mahasiswa{
 	@Id
 	private String id;
-	@Field(name = "nilai_jml")
-	private int nilaiJml;
 	@Field(name = "nilai_uts")
 	private int nilaiUts;
 	@Field(name = "nilai_uas")
 	private int nilaiUas;
 	@Field(name = "nilai_tugas")
 	private int nilaiTugas;
-	@Field(name = "nilai_avr")
-	private double nilaiAvr;
 	@Field(name = "grade")
-	private MhsGrade grade;
+	private MhsGrade grade = MhsGrade.getGrade(getNilaiAkhir());
 	@Field(name = "nama")
 	@Indexed(unique = true)
 	private String namaMhs;
@@ -29,14 +25,12 @@ public class Mahasiswa{
 	@Field(name = "kelas")
 	private String kelas;
 	@Field(name = "nilai_akhir")
-	private double nilaiAkhir;
+	private double nilaiAkhir = (30*nilaiTugas/100) + (30*nilaiUts/100) + (40*nilaiUas/100);
 
 	public void addMahasiswa(String namaMhs, String NIM, String kelas) {
 		this.setNamaMhs(namaMhs);
 		this.setNIM(NIM);
 		this.setKelas(kelas);
-		this.setNilaiJml(0);
-		this.setNilaiAvr(0);
 		this.setGrade(MhsGrade.E);
 		this.setNilaiUts(0);
 		this.setNilaiUas(0);
@@ -55,14 +49,6 @@ public class Mahasiswa{
 
 	public void setId(String id) {
 		this.id = id;
-	}
-
-	public int getNilaiJml() {
-		return nilaiJml;
-	}
-
-	public void setNilaiJml(int nilaiJml) {
-		this.nilaiJml = nilaiJml;
 	}
 
 	public int getNilaiUts() {
@@ -89,16 +75,9 @@ public class Mahasiswa{
 		this.nilaiTugas = nilaiTugas;
 	}
 
-	public double getNilaiAvr() {
-		return nilaiAvr;
-	}
-
-	public void setNilaiAvr(double nilaiAvr) {
-		this.nilaiAvr = nilaiAvr;
-	}
-
 	public MhsGrade getGrade() {
-		return MhsGrade.getGrade(this.nilaiAvr);
+		setGrade(MhsGrade.getGrade(getNilaiAkhir()));
+		return this.grade;
 	}
 
 	public void setGrade(MhsGrade grade) {
