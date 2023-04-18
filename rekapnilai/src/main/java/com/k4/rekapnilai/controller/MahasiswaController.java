@@ -4,11 +4,12 @@ import com.k4.rekapnilai.model.Mahasiswa;
 import com.k4.rekapnilai.service.MahasiswaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController
+@Controller
 @RequestMapping("/api/mahasiswa")
 public class MahasiswaController {
 
