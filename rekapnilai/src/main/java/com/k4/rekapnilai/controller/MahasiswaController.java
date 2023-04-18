@@ -5,12 +5,13 @@ import com.k4.rekapnilai.service.MahasiswaService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
-@RequestMapping("/api/mahasiswa")
+@RequestMapping("/mahasiswa")
 public class MahasiswaController {
 
     private final MahasiswaService mahasiswaService;
@@ -44,6 +45,13 @@ public class MahasiswaController {
     public ResponseEntity<List<Mahasiswa>> getAllMahasiswa() {
         //Method untuk mengambil semua mahasiswa
         return ResponseEntity.ok(mahasiswaService.getAllMahasiswa());
+    }
+
+    @RequestMapping(value = "/home")
+    public String showAllMahasiswa(Model model) {
+        List<Mahasiswa> mahasiswa = mahasiswaService.getAllMahasiswa();
+        model.addAttribute("mahasiswa", mahasiswa);
+        return "mahasiswa";
     }
 
 }
