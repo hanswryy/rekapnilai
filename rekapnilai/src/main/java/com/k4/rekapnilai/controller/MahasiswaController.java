@@ -47,11 +47,11 @@ public class MahasiswaController {
         return ResponseEntity.ok(mahasiswaService.getAllMahasiswa());
     }
 
-    @RequestMapping(value = "/home")
+    @RequestMapping(value = "/listdata" , method = RequestMethod.GET)
     public String showAllMahasiswa(Model model) {
         List<Mahasiswa> mahasiswa = mahasiswaService.getAllMahasiswa();
         model.addAttribute("mahasiswa", mahasiswa);
-        return "mahasiswa";
+        return "ListMahasiswa";
     }
 
 }
