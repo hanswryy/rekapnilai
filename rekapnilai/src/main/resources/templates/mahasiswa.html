@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Rekap Nilai Mahasiswa</title>
+</head>
+<body>
+<table class="table">
+    <thead>
+    <tr>
+        <th scope="col">Nama Mahasiswa</th>
+        <th scope="col">NIM</th>
+        <th scope="col">Kelas</th>
+        <th scope="col">Nilai Tugas</th>
+        <th scope="col">Nilai UTS</th>
+        <th scope="col">Nilai UAS</th>
+        <th scope="col">Nilai Akhir</th>
+        <th scope="col">Indeks</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="mhs : ${mahasiswa}">
+        <td th:text="${mhs.getNamaMhs()}">nama</td>
+        <td th:text="${mhs.getNIM()}">nim</td>
+        <td th:text="${mhs.getKelas()}">kelas</td>
+        <td th:text="${mhs.getNilaiTugas()}">nilai tugas</td>
+        <td th:text="${mhs.getNilaiUts()}">nilai uts</td>
+        <td th:text="${mhs.getNilaiUas()}">nilai uas</td>
+        <td th:text="${mhs.getNilaiAkhir()}">nilai akhir</td>
+        <td th:text="${mhs.getGrade()}">indeks</td>
+        <td><a th:href="@{/edit/{id}(id=${mhs.id})}">Edit</a></td>
+        <td><a th:href="@{/delete/{id}(id=${mhs.id})}">Delete</a></td>
+    </tr>
+</table>
+</body>
+</html>
