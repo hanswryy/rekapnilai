@@ -46,4 +46,8 @@ public class MahasiswaService {
         return mahasiswaRepository.findAll();
     }
 
+    public int getSize() {
+        return mahasiswaRepository.findAll().size();
+    }
+
 }

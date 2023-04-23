@@ -49,7 +49,8 @@ public class MahasiswaController {
     }
 
     @RequestMapping(value = "/home")
-    public String home() {
+    public String home(Model model) {
+        model.addAttribute("size", mahasiswaService.getSize());
         return "Home";
     }
 
@@ -58,6 +59,19 @@ public class MahasiswaController {
         List<Mahasiswa> mahasiswa = mahasiswaService.getAllMahasiswa();
         model.addAttribute("mahasiswa", mahasiswa);
         return "ListMahasiswa";
+    }
+
+    @GetMapping(value = "/create")
+    public String createMahasiswa(Model model) {
+        Mahasiswa mahasiswa = new Mahasiswa();
+        model.addAttribute("mahasiswa", mahasiswa);
+        return "Create";
+    }
+
+    @PostMapping(value = "/create")
+    public String submitForm(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa) {
+        mahasiswaService.addMahasiswa(mahasiswa);
+        return "redirect:/mahasiswa/home";
     }
 
 }
