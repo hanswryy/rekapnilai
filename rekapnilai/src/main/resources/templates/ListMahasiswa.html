@@ -5,13 +5,11 @@
     <meta name="keywords" content="DELETE">
     <meta name="description" content="">
     <title>ListData</title>
-    <link rel="stylesheet" th:href="nicepage.css" media="screen">
-    <link rel="stylesheet" th:href="ListData.css" media="screen">
-    <link type="text/css"
-          th:href="@{/resources/ListData.css}"
-          rel="stylesheet" media="screen"/>
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+    <link rel="stylesheet" href="/css/ListData.css" media="screen">
+
+    <script class="u-script" type="text/javascript" src="/js/jquery.js" defer=""></script>
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700,700i,900,900i">
@@ -29,7 +27,7 @@
     <meta property="og:type" content="website">
   <meta data-intl-tel-input-cdn-path="intlTelInput/"></head>
   <body class="u-body u-overlap u-overlap-contrast u-xl-mode" data-lang="en">
-    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-eba1" data-image-width="1280" data-image-height="853"><span class="u-file-icon u-icon u-text-custom-color-34 u-icon-1" data-href="Home.html"><img src="images/318477-6f849ed9.png" alt=""></span>
+    <section class="u-align-center u-clearfix u-image u-shading u-section-1" id="sec-eba1" data-image-width="1280" data-image-height="853"><span class="u-file-icon u-icon u-text-custom-color-34 u-icon-1" data-href="Home.html"><img src="/images/318477-6f849ed9.png" alt=""></span>
       <h2 class="u-custom-font u-font-source-sans-pro u-text u-text-1">List Mahasiswa</h2>
       <p class="u-text u-text-2">List nilai data mahasiswa D4 - Teknik Informatika</p>
       <div class="u-table u-table-responsive u-table-1">
@@ -52,7 +50,7 @@
                 <th class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-dark-1 u-table-cell u-table-cell-5">Nilai UTS</th>
                 <th class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-dark-1 u-table-cell u-table-cell-6">Nilai UAS</th>
                 <th class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-dark-1 u-table-cell u-table-cell-7">Nilai Akhir</th>
-                <th class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-dark-1 u-table-cell u-table-cell-8">Grade</th>
+                <th class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-palette-5-dark-1 u-table-cell u-table-cell-7">Grade</th>
 
             </tr>
           </thead>
@@ -65,7 +63,7 @@
               <td class="u-border-1 u-border-palette-5-dark-1 u-table-cell u-table-cell-5" th:text="${mhs.getNilaiUts()}">nilai uts</td>
               <td class="u-border-1 u-border-palette-5-dark-1 u-table-cell u-table-cell-6" th:text="${mhs.getNilaiUas()}">nilai uas</td>
               <td class="u-border-1 u-border-palette-5-dark-1 u-table-cell u-table-cell-7" th:text="${mhs.getNilaiAkhir()}">nilai akhir</td>
-              <td class="u-border-1 u-border-palette-5-dark-1 u-table-cell u-table-cell-8" th:text="${mhs.getGrade()}">indeks</td>
+              <td class="u-border-1 u-border-palette-5-dark-1 u-table-cell u-table-cell-7" th:text="${mhs.getGrade()}">indeks</td>
               <td><a th:href="@{/edit/{id}(id=${mhs.id})}">Edit</a></td>
               <td><a th:href="@{/delete/{id}(id=${mhs.id})}">Delete</a></td>
             </tr>

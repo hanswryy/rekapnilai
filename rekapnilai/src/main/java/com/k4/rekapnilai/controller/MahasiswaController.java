@@ -47,7 +47,7 @@ public class MahasiswaController {
         return ResponseEntity.ok(mahasiswaService.getAllMahasiswa());
     }
 
-    @RequestMapping(value = "/listdata" , method = RequestMethod.GET)
+    @GetMapping(value = "/listdata")
     public String showAllMahasiswa(Model model) {
         List<Mahasiswa> mahasiswa = mahasiswaService.getAllMahasiswa();
         model.addAttribute("mahasiswa", mahasiswa);
