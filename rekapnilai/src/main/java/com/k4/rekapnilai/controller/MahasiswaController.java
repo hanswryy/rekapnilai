@@ -28,19 +28,19 @@ public class MahasiswaController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
-        //Method untuk menghapus mahasiswa
-        mahasiswaService.deleteMahasiswa(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
+//        //Method untuk menghapus mahasiswa
+//        mahasiswaService.deleteMahasiswa(id);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 
-    @PutMapping
-    public ResponseEntity updateMahasiswa(@RequestBody Mahasiswa mahasiswa) {
-        //Method untuk mengupdate mahasiswa
-        mahasiswaService.updateMahasiswa(mahasiswa);
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
+//    @PutMapping
+//    public ResponseEntity updateMahasiswa(@RequestBody Mahasiswa mahasiswa) {
+//        //Method untuk mengupdate mahasiswa
+//        mahasiswaService.updateMahasiswa(mahasiswa);
+//        return ResponseEntity.status(HttpStatus.OK).build();
+//    }
 
     @GetMapping
     public ResponseEntity<List<Mahasiswa>> getAllMahasiswa() {
@@ -74,4 +74,19 @@ public class MahasiswaController {
         return "redirect:/mahasiswa/home";
     }
 
+    @GetMapping(value = "/edit/{id}")
+    public String editMahasiswa(@PathVariable (value = "id") String id, Model model) {
+        //Mengambil data mahasiswa dari service
+        Mahasiswa mahasiswa = mahasiswaService.getMahasiswaById(id);
+        //Set data mahasiswa tersebut ke model
+        model.addAttribute("mahasiswa", mahasiswa);
+        return "Update";
+    }
+
+    @GetMapping(value = "/delete/{id}")
+    public String deleteMahasiswa(@PathVariable (value = "id") String id) {
+        //Menghapus data mahasiswa
+        this.mahasiswaService.deleteMahasiswaById(id);
+        return "redirect:/";
+    }
 }
