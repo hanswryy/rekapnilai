@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="utf-8">
+  <meta name="keywords" content="">
+  <meta name="description" content="">
+  <title>Create</title>
+  <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+  <link rel="stylesheet" href="/css/Create.css" media="screen">
+  <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
+  <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
+  <meta name="referrer" content="origin">
+  <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
+
+</head>
+    <form action="#" th:action="@{create}" th:object="${mahasiswa}" method="post" class="u-clearfix u-form-spacing-28 u-form-vertical u-inner-form" style="padding: 11px;" source="email" name="form">
+      <div class="u-form-group u-label-top u-form-group-1">
+        <label for="text-8b9a" class="u-label">Nama</label>
+        <input type="text" th:field="*{namaMhs}" id="text-8b9a" name="nama" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-1" required="required" placeholder="Masukkan nama">
+      </div>
+      <div class="u-form-group u-label-top u-form-group-2">
+        <label for="text-4440" class="u-label">NIM</label>
+        <input type="text" th:field="*{NIM}" placeholder="Masukkan NIM" id="text-4440" name="nim" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-2" required="required">
+      </div>
+      <div class="u-form-group u-label-top u-form-group-3">
+        <label for="text-da55" class="u-label">Kelas</label>
+        <input type="text" th:field="*{kelas}" placeholder="Masukkan Kelas" id="text-da55" name="kelas" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-3" required="required">
+      </div>
+      <div class="u-form-group u-label-top u-form-group-4">
+        <label for="text-298a" class="u-label">Nilai Tugas</label>
+        <input type="text" th:field="*{nilaiTugas}" placeholder="Masukkan Nilai Tugas" id="text-298a" name="nilaitugas" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-4" required="required">
+      </div>
+      <div class="u-form-group u-label-top u-form-group-5">
+        <label for="text-e36b" class="u-label">Nilai UTS</label>
+        <input type="text" th:field="*{nilaiUts}" id="text-e36b" name="nilaiuts" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-5" placeholder="Masukkan Nilai UTS" required="required">
+      </div>
+      <div class="u-form-group u-label-top u-form-group-6">
+        <label for="text-aa12" class="u-label">Nilai UAS</label>
+        <input type="text" th:field="*{nilaiUas}" placeholder="Masukkan Nilai UAS" id="text-aa12" name="nilaiuas" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-6">
+      </div>
+      <button type="submit" value="">Kyah</button>
+    </form>
+    </html>

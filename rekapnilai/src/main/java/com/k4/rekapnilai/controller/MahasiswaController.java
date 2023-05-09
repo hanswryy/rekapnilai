@@ -2,7 +2,6 @@ package com.k4.rekapnilai.controller;
 
 import com.k4.rekapnilai.model.Mahasiswa;
 import com.k4.rekapnilai.service.MahasiswaService;
-import jakarta.persistence.NamedStoredProcedureQuery;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -73,5 +72,4 @@ public class MahasiswaController {
         mahasiswaService.addMahasiswa(mahasiswa);
         return "redirect:/mahasiswa/home";
     }
-
 }
