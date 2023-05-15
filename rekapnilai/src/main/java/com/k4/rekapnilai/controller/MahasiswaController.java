@@ -28,19 +28,19 @@ public class MahasiswaController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
-    @DeleteMapping("/{id}")
-    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
-        //Method untuk menghapus mahasiswa
-        mahasiswaService.deleteMahasiswa(id);
-        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-    }
+//    @DeleteMapping("/{id}")
+//    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
+//        //Method untuk menghapus mahasiswa
+//        mahasiswaService.deleteMahasiswa(id);
+//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
+//    }
 
-    @PutMapping
-    public ResponseEntity updateMahasiswa(@RequestBody Mahasiswa mahasiswa) {
-        //Method untuk mengupdate mahasiswa
-        mahasiswaService.updateMahasiswa(mahasiswa);
-        return ResponseEntity.status(HttpStatus.OK).build();
-    }
+//    @PutMapping
+//    public ResponseEntity updateMahasiswa(@RequestBody Mahasiswa mahasiswa) {
+//        //Method untuk mengupdate mahasiswa
+//        mahasiswaService.updateMahasiswa(mahasiswa);
+//        return ResponseEntity.status(HttpStatus.OK).build();
+//    }
 
     @GetMapping
     public ResponseEntity<List<Mahasiswa>> getAllMahasiswa() {
@@ -70,8 +70,43 @@ public class MahasiswaController {
 
     @PostMapping(value = "/create")
     public String submitForm(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa) {
+        //Menyimpan mahasiswa ke database
+        //Jika nilai akhir lebih dari 100 atau kurang dari 0, maka akan dianggap tidak valid
+        //Dengan menggunakan exception handling, kita bisa mengatasi error tersebut
+//        try{
+//            if(mahasiswa.getNilaiAkhir() > 100 || mahasiswa.getNilaiAkhir() < 0){
+//                throw new Exception("Nilai akhir tidak valid ! (Nilai akhir harus 0 - 100)");
+//            }
+//            mahasiswaService.addMahasiswa(mahasiswa);
+//            return "redirect:/mahasiswa/home";
+//        }catch (Exception e) {
+//            System.out.println(e.getMessage());
+//            return "redirect:/mahasiswa/create?error";
+//        }
         mahasiswaService.addMahasiswa(mahasiswa);
         return "redirect:/mahasiswa/home";
     }
 
+    @GetMapping(value = "/edit/{id}")
+    public String editMahasiswa(@PathVariable (value = "id") String id, Model model) {
+        //Mengambil data mahasiswa dari service
+        Mahasiswa mahasiswa = mahasiswaService.getMahasiswaById(id);
+        //Set data mahasiswa tersebut ke model
+        model.addAttribute("mahasiswa", mahasiswa);
+        return "Update";
+    }
+    @PostMapping(value = "/saveMahasiswa")
+    public String saveMahasiswa(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa){
+        //Menyimpan mahasiswa ke database
+        mahasiswaService.saveMahasiswa(mahasiswa);
+        return "redirect:/mahasiswa/listdata";
+    }
+
+
+    @GetMapping(value = "/delete/{id}")
+    public String deleteMahasiswa(@PathVariable (value = "id") String id) {
+        //Menghapus data mahasiswa
+        this.mahasiswaService.deleteMahasiswaById(id);
+        return "redirect:/mahasiswa/listdata";
+    }
 }
