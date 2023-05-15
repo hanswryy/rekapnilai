@@ -53,14 +53,17 @@
                     <div class="u-form-group u-label-top u-form-group-4">
                       <label for="text-298a" class="u-label">Nilai Tugas</label>
                       <input type="text" th:field="*{nilaiTugas}" placeholder="Masukkan Nilai Tugas" id="text-298a" name="nilaitugas" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-4" required="required">
+					  <p th:if="${param.error == 'data_type'}">Masukkan hanya boleh berupa angka.</p>
                     </div>
                     <div class="u-form-group u-label-top u-form-group-5">
                       <label for="text-e36b" class="u-label">Nilai UTS</label>
                       <input type="text" th:field="*{nilaiUts}" id="text-e36b" name="nilaiuts" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-5" placeholder="Masukkan Nilai UTS" required="required">
+					  <p th:if="${param.error == 'data_type'}">Masukkan hanya boleh berupa angka.</p>
                     </div>
                     <div class="u-form-group u-label-top u-form-group-6">
                       <label for="text-aa12" class="u-label">Nilai UAS</label>
                       <input type="text" th:field="*{nilaiUas}" placeholder="Masukkan Nilai UAS" id="text-aa12" name="nilaiuas" class="u-border-none u-input u-input-rectangle u-palette-5-dark-2 u-radius-50 u-input-6">
+					  <p th:if="${param.error == 'data_type'}">Masukkan hanya boleh berupa angka.</p>
                     </div>
                       <div class="u-align-right u-form-group u-form-submit u-label-top">
                           <button type="submit" class="u-active-white u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-white u-palette-3-base u-radius-50 u-btn-1">Submit</button>

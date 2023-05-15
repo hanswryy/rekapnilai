@@ -1,5 +1,6 @@
 package com.k4.rekapnilai.controller;
 
+import com.k4.rekapnilai.exceptionhandler.InvalidNilaiException;
 import com.k4.rekapnilai.model.Mahasiswa;
 import com.k4.rekapnilai.service.MahasiswaService;
 import jakarta.persistence.NamedStoredProcedureQuery;
@@ -16,6 +17,10 @@ import java.util.List;
 public class MahasiswaController {
 
     private final MahasiswaService mahasiswaService;
+    
+    private String tugasMsg = "";
+    private String utsMsg = "";
+    private String uasMsg = "";
 
     public MahasiswaController(MahasiswaService mahasiswaService) {
         this.mahasiswaService = mahasiswaService;
@@ -91,15 +96,26 @@ public class MahasiswaController {
     public String editMahasiswa(@PathVariable (value = "id") String id, Model model) {
         //Mengambil data mahasiswa dari service
         Mahasiswa mahasiswa = mahasiswaService.getMahasiswaById(id);
-        //Set data mahasiswa tersebut ke model
         model.addAttribute("mahasiswa", mahasiswa);
         return "Update";
     }
+    
     @PostMapping(value = "/saveMahasiswa")
     public String saveMahasiswa(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa){
-        //Menyimpan mahasiswa ke database
-        mahasiswaService.saveMahasiswa(mahasiswa);
-        return "redirect:/mahasiswa/listdata";
+//    	validateMahasiswa(mahasiswa);
+    	try {
+    		if (mahasiswa.getNilaiTugas() < 0 || mahasiswa.getNilaiTugas() > 100 ||
+    				mahasiswa.getNilaiUts() < 0 || mahasiswa.getNilaiUts() > 100 ||
+    				mahasiswa.getNilaiUas() < 0 || mahasiswa.getNilaiUas() > 100) {
+    			throw new InvalidNilaiException("Masukan tidak valid");
+    		}
+    		
+    		//Menyimpan mahasiswa ke database
+    		mahasiswaService.saveMahasiswa(mahasiswa);
+    		return "redirect:/mahasiswa/listdata";
+		} catch (InvalidNilaiException e) {
+			return "Update";
+		}
     }
 
 
@@ -109,4 +125,21 @@ public class MahasiswaController {
         this.mahasiswaService.deleteMahasiswaById(id);
         return "redirect:/mahasiswa/listdata";
     }
+    
+//    private void validateMahasiswa(Mahasiswa mahasiswa) {
+////        byte errorCount = 0;
+//        
+//    	System.out.println("masuk");
+//        if (!(((Object)mahasiswa.getNilaiTugas()).getClass().getSimpleName()).equals("Integer")) {
+//            throw new BadRequestException("Masukan tidak boleh selain angka.");
+//        }
+//        
+//        if (!(((Object)mahasiswa.getNilaiUts()).getClass().getSimpleName()).equals("Integer")) {
+//            throw new BadRequestException("Masukan tidak boleh selain angka.");
+//        }
+//        
+//        if (!(((Object)mahasiswa.getNilaiUts()).getClass().getSimpleName()).equals("Integer")) {
+//            throw new BadRequestException("Masukan tidak boleh selain angka.");
+//        }
+//    }
 }
