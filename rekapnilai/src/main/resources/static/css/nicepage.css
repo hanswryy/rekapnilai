@@ -28,6 +28,14 @@
   -webkit-background-clip: padding-box;
   background-clip: padding-box; }
 
+.edit-btn {
+    color: #3ea125;
+}
+
+.dlt-btn {
+    color: #f03030;
+}
+
 .fr-view img.fr-shadow, .fr-view .fr-img-caption.fr-shadow img {
   -webkit-box-shadow: 10px 10px 5px 0px #cccccc;
   -moz-box-shadow: 10px 10px 5px 0px #cccccc;
@@ -47571,9 +47579,11 @@ a.u-link.u-text-hover-grey-90:hover {
         /** color-rules **/
 
         /** alt-color-rules **/
+        /**
         .u-custom-color-1 a,.u-custom-color-2 a,.u-custom-color-3 a,.u-custom-color-5 a,.u-custom-color-6 a,.u-custom-color-7 a,.u-custom-color-8 a,.u-custom-color-9 a,.u-custom-color-10 a,.u-custom-color-12 a,.u-custom-color-13 a,.u-custom-color-14 a,.u-custom-color-15 a,.u-custom-color-21 a,.u-custom-color-26 a,.u-custom-color-27 a,.u-custom-color-29 a,.u-custom-color-30 a,.u-custom-color-31 a,.u-custom-color-32 a,.u-custom-color-33 a,.u-custom-color-34 a,.u-body-color a,.u-palette-1-base a,.u-palette-1-dark-3 a,.u-palette-1-dark-2 a,.u-palette-1-dark-1 a,.u-palette-1 a,.u-palette-1-light-1 a,.u-palette-2-base a,.u-palette-2-dark-3 a,.u-palette-2-dark-2 a,.u-palette-2-dark-1 a,.u-palette-2 a,.u-palette-2-light-1 a,.u-palette-3-dark-3 a,.u-palette-3-dark-2 a,.u-palette-3-dark-1 a,.u-palette-4-base a,.u-palette-4-dark-3 a,.u-palette-4-dark-2 a,.u-palette-4-dark-1 a,.u-palette-5-dark-3 a,.u-palette-5-dark-2 a,.u-palette-5-dark-1 a,.u-grey-40 a,.u-grey-30 a,.u-grey-90 a,.u-grey-80 a,.u-grey-75 a,.u-black a,.u-grey-70 a,.u-grey-60 a,.u-grey-50 a,.u-grey-dark-3 a,.u-grey-dark-2 a,.u-grey-dark-1 a,.u-grey a,.u-shading a,.u-overlap-contrast .u-header a:not(.u-nav-link):not(.u-btn)
         {
-        color: #adcce9;
+        color: #00AAFF;
+        **/
         }
         .u-custom-color-1 a:hover,.u-custom-color-2 a:hover,.u-custom-color-3 a:hover,.u-custom-color-5 a:hover,.u-custom-color-6 a:hover,.u-custom-color-7 a:hover,.u-custom-color-8 a:hover,.u-custom-color-9 a:hover,.u-custom-color-10 a:hover,.u-custom-color-12 a:hover,.u-custom-color-13 a:hover,.u-custom-color-14 a:hover,.u-custom-color-15 a:hover,.u-custom-color-21 a:hover,.u-custom-color-26 a:hover,.u-custom-color-27 a:hover,.u-custom-color-29 a:hover,.u-custom-color-30 a:hover,.u-custom-color-31 a:hover,.u-custom-color-32 a:hover,.u-custom-color-33 a:hover,.u-custom-color-34 a:hover,.u-body-color a:hover,.u-palette-1-base a:hover,.u-palette-1-dark-3 a:hover,.u-palette-1-dark-2 a:hover,.u-palette-1-dark-1 a:hover,.u-palette-1 a:hover,.u-palette-1-light-1 a:hover,.u-palette-2-base a:hover,.u-palette-2-dark-3 a:hover,.u-palette-2-dark-2 a:hover,.u-palette-2-dark-1 a:hover,.u-palette-2 a:hover,.u-palette-2-light-1 a:hover,.u-palette-3-dark-3 a:hover,.u-palette-3-dark-2 a:hover,.u-palette-3-dark-1 a:hover,.u-palette-4-base a:hover,.u-palette-4-dark-3 a:hover,.u-palette-4-dark-2 a:hover,.u-palette-4-dark-1 a:hover,.u-palette-5-dark-3 a:hover,.u-palette-5-dark-2 a:hover,.u-palette-5-dark-1 a:hover,.u-grey-40 a:hover,.u-grey-30 a:hover,.u-grey-90 a:hover,.u-grey-80 a:hover,.u-grey-75 a:hover,.u-black a:hover,.u-grey-70 a:hover,.u-grey-60 a:hover,.u-grey-50 a:hover,.u-grey-dark-3 a:hover,.u-grey-dark-2 a:hover,.u-grey-dark-1 a:hover,.u-grey a:hover
         {
@@ -47581,7 +47591,7 @@ a.u-link.u-text-hover-grey-90:hover {
         }
         .u-custom-color-1 .u-btn,.u-custom-color-2 .u-btn,.u-custom-color-3 .u-btn,.u-custom-color-5 .u-btn,.u-custom-color-6 .u-btn,.u-custom-color-7 .u-btn,.u-custom-color-8 .u-btn,.u-custom-color-9 .u-btn,.u-custom-color-10 .u-btn,.u-custom-color-12 .u-btn,.u-custom-color-13 .u-btn,.u-custom-color-14 .u-btn,.u-custom-color-15 .u-btn,.u-custom-color-21 .u-btn,.u-custom-color-26 .u-btn,.u-custom-color-27 .u-btn,.u-custom-color-29 .u-btn,.u-custom-color-30 .u-btn,.u-custom-color-31 .u-btn,.u-custom-color-32 .u-btn,.u-custom-color-33 .u-btn,.u-custom-color-34 .u-btn,.u-body-color .u-btn,.u-palette-1-base .u-btn,.u-palette-1-dark-3 .u-btn,.u-palette-1-dark-2 .u-btn,.u-palette-1-dark-1 .u-btn,.u-palette-1 .u-btn,.u-palette-1-light-1 .u-btn,.u-palette-2-base .u-btn,.u-palette-2-dark-3 .u-btn,.u-palette-2-dark-2 .u-btn,.u-palette-2-dark-1 .u-btn,.u-palette-2 .u-btn,.u-palette-2-light-1 .u-btn,.u-palette-3-dark-3 .u-btn,.u-palette-3-dark-2 .u-btn,.u-palette-3-dark-1 .u-btn,.u-palette-4-base .u-btn,.u-palette-4-dark-3 .u-btn,.u-palette-4-dark-2 .u-btn,.u-palette-4-dark-1 .u-btn,.u-palette-5-dark-3 .u-btn,.u-palette-5-dark-2 .u-btn,.u-palette-5-dark-1 .u-btn,.u-grey-40 .u-btn,.u-grey-30 .u-btn,.u-grey-90 .u-btn,.u-grey-80 .u-btn,.u-grey-75 .u-btn,.u-black .u-btn,.u-grey-70 .u-btn,.u-grey-60 .u-btn,.u-grey-50 .u-btn,.u-grey-dark-3 .u-btn,.u-grey-dark-2 .u-btn,.u-grey-dark-1 .u-btn,.u-grey .u-btn,.u-shading .u-btn,.u-overlap-contrast .u-header .u-btn
         {
-        background-color: #adcce9;
+        background-color: #000000;
         color: #000000;
         }
         .u-custom-color-1 .u-btn:hover,.u-custom-color-2 .u-btn:hover,.u-custom-color-3 .u-btn:hover,.u-custom-color-5 .u-btn:hover,.u-custom-color-6 .u-btn:hover,.u-custom-color-7 .u-btn:hover,.u-custom-color-8 .u-btn:hover,.u-custom-color-9 .u-btn:hover,.u-custom-color-10 .u-btn:hover,.u-custom-color-12 .u-btn:hover,.u-custom-color-13 .u-btn:hover,.u-custom-color-14 .u-btn:hover,.u-custom-color-15 .u-btn:hover,.u-custom-color-21 .u-btn:hover,.u-custom-color-26 .u-btn:hover,.u-custom-color-27 .u-btn:hover,.u-custom-color-29 .u-btn:hover,.u-custom-color-30 .u-btn:hover,.u-custom-color-31 .u-btn:hover,.u-custom-color-32 .u-btn:hover,.u-custom-color-33 .u-btn:hover,.u-custom-color-34 .u-btn:hover,.u-body-color .u-btn:hover,.u-palette-1-base .u-btn:hover,.u-palette-1-dark-3 .u-btn:hover,.u-palette-1-dark-2 .u-btn:hover,.u-palette-1-dark-1 .u-btn:hover,.u-palette-1 .u-btn:hover,.u-palette-1-light-1 .u-btn:hover,.u-palette-2-base .u-btn:hover,.u-palette-2-dark-3 .u-btn:hover,.u-palette-2-dark-2 .u-btn:hover,.u-palette-2-dark-1 .u-btn:hover,.u-palette-2 .u-btn:hover,.u-palette-2-light-1 .u-btn:hover,.u-palette-3-dark-3 .u-btn:hover,.u-palette-3-dark-2 .u-btn:hover,.u-palette-3-dark-1 .u-btn:hover,.u-palette-4-base .u-btn:hover,.u-palette-4-dark-3 .u-btn:hover,.u-palette-4-dark-2 .u-btn:hover,.u-palette-4-dark-1 .u-btn:hover,.u-palette-5-dark-3 .u-btn:hover,.u-palette-5-dark-2 .u-btn:hover,.u-palette-5-dark-1 .u-btn:hover,.u-grey-40 .u-btn:hover,.u-grey-30 .u-btn:hover,.u-grey-90 .u-btn:hover,.u-grey-80 .u-btn:hover,.u-grey-75 .u-btn:hover,.u-black .u-btn:hover,.u-grey-70 .u-btn:hover,.u-grey-60 .u-btn:hover,.u-grey-50 .u-btn:hover,.u-grey-dark-3 .u-btn:hover,.u-grey-dark-2 .u-btn:hover,.u-grey-dark-1 .u-btn:hover,.u-grey .u-btn:hover,.u-shading .u-btn:hover,.u-overlap-contrast .u-header .u-btn:hover
@@ -47606,6 +47616,10 @@ a.u-link.u-text-hover-grey-90:hover {
 .u-header .u-sheet-1 {
   min-height: 80px;
 }
+
+.u-href-1 {
+    color: #00aaff;
+  }
 
 .u-header .u-image-1 {
   width: 64px;

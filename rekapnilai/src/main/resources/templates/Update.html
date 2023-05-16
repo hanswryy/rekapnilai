@@ -100,19 +100,18 @@
                       <div class="u-form-address u-form-group u-form-group-2">
                         <label for="address-452f" class="u-label u-text-body-alt-color u-label-2">Nilai Tugas</label>
                         <input type="text" th:field="*{nilaiTugas}" placeholder="Masukkan Nilai Tugas" id="address-452f" name="address" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
-						<p th:if="${param.error == 'tipe_data'}">Masukkan hanya boleh berupa angka.</p>
                       </div>
                       <div class="u-form-group u-form-group-3">
                         <label for="text-7a9e" class="u-label u-text-body-alt-color u-label-3">Nilai UTS</label>
                         <input type="text" th:field="*{nilaiUts}" placeholder="Masukkan Nilai UTS" id="text-7a9e" name="nilaiuts" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
-						<p th:if="${param.error == 'tipe_data'}">Masukkan hanya boleh berupa angka.</p>
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c98f" class="u-label u-text-body-alt-color u-label-4">Nilai UAS</label>
                         <input type="text" th:field="*{nilaiUas}" placeholder="Masukkan Nilai UAS" id="text-c98f" name="nilaiuas" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
-						<p th:if="${param.error == 'tipe_data'}">Masukkan hanya boleh berupa angka.</p>
                       </div>
                       <div class="u-align-left u-form-group u-form-submit">
+                        <p style="color: red; font-size:small;" th:if="${errorMsg}" th:text="${errorMsg}"></p>
+                        <p style="color: red; font-size:small;" th:if="${badReqMsg}" th:text="${badReqMsg}"></p>
                         <button type="submit" class="u-active-white u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-white u-palette-3-base u-radius-50 u-btn-1">Submit</button>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
