@@ -27,33 +27,6 @@ public class MahasiswaController {
         this.mahasiswaService = mahasiswaService;
     }
 
-    @PostMapping
-    public ResponseEntity addMahasiswa(@RequestBody Mahasiswa mahasiswa) {
-        //Method untuk menambahkan mahasiswa
-        mahasiswaService.addMahasiswa(mahasiswa);
-        return ResponseEntity.status(HttpStatus.CREATED).build();
-    }
-
-//    @DeleteMapping("/{id}")
-//    public ResponseEntity deleteMahasiswa(@PathVariable String id) {
-//        //Method untuk menghapus mahasiswa
-//        mahasiswaService.deleteMahasiswa(id);
-//        return ResponseEntity.status(HttpStatus.NO_CONTENT).build();
-//    }
-
-//    @PutMapping
-//    public ResponseEntity updateMahasiswa(@RequestBody Mahasiswa mahasiswa) {
-//        //Method untuk mengupdate mahasiswa
-//        mahasiswaService.updateMahasiswa(mahasiswa);
-//        return ResponseEntity.status(HttpStatus.OK).build();
-//    }
-
-    @GetMapping
-    public ResponseEntity<List<Mahasiswa>> getAllMahasiswa() {
-        //Method untuk mengambil semua mahasiswa
-        return ResponseEntity.ok(mahasiswaService.getAllMahasiswa());
-    }
-
     @RequestMapping(value = "/home")
     public String home(Model model) {
         model.addAttribute("size", mahasiswaService.getSize());
@@ -140,21 +113,5 @@ public class MahasiswaController {
         this.mahasiswaService.deleteMahasiswaById(id);
         return "redirect:/mahasiswa/listdata";
     }
-    
-//    private void validateMahasiswa(Mahasiswa mahasiswa) {
-////        byte errorCount = 0;
-//        
-//    	System.out.println("masuk");
-//        if (!(((Object)mahasiswa.getNilaiTugas()).getClass().getSimpleName()).equals("Integer")) {
-//            throw new BadRequestException("Masukan tidak boleh selain angka.");
-//        }
-//        
-//        if (!(((Object)mahasiswa.getNilaiUts()).getClass().getSimpleName()).equals("Integer")) {
-//            throw new BadRequestException("Masukan tidak boleh selain angka.");
-//        }
-//        
-//        if (!(((Object)mahasiswa.getNilaiUts()).getClass().getSimpleName()).equals("Integer")) {
-//            throw new BadRequestException("Masukan tidak boleh selain angka.");
-//        }
-//    }
+
 }

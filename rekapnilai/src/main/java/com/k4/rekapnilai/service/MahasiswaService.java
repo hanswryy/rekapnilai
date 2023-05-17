@@ -23,27 +23,6 @@ public class MahasiswaService {
         mahasiswaRepository.save(mahasiswa);
     }
 
-//    public void deleteMahasiswa(String Id) {
-//        //Method untuk menghapus mahasiswa
-//        mahasiswaRepository.deleteById(Id);
-//    }
-
-//    public void updateMahasiswa(Mahasiswa mahasiswa) {
-//        //Method untuk mengupdate mahasiswa
-//        Mahasiswa savedMahasiswa = mahasiswaRepository.findById(mahasiswa.getId())
-//                .orElseThrow(() -> new RuntimeException(
-//                        String.format("Mahasiswa dengan id %s tidak ditemukan", mahasiswa.getId())
-//                ));
-//        savedMahasiswa.setNamaMhs(mahasiswa.getNamaMhs());
-//        savedMahasiswa.setNIM(mahasiswa.getNIM());
-//        savedMahasiswa.setKelas(mahasiswa.getKelas());
-//        savedMahasiswa.setNilaiUas(mahasiswa.getNilaiUas());
-//        savedMahasiswa.setNilaiUts(mahasiswa.getNilaiUts());
-//        savedMahasiswa.setNilaiTugas(mahasiswa.getNilaiTugas());
-//
-//        mahasiswaRepository.save(savedMahasiswa);
-//    }
-
     public List<Mahasiswa> getAllMahasiswa() {
         //Method untuk mengambil semua mahasiswa
         return mahasiswaRepository.findAll();
