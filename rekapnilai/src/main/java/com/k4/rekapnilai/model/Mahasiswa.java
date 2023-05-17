@@ -37,11 +37,11 @@ public class Mahasiswa{
 		this.setNilaiTugas(0);
 	}
 	
-	public int menghitungNilai() {
-		int hasilNilai = 0;
-		//Menthod menghitung nilai
-		return hasilNilai;
-	}
+//	public int menghitungNilai() {
+//		int hasilNilai = 0;
+//		//Menthod menghitung nilai
+//		return hasilNilai;
+//	}
 
 	public String getId() {
 		return id;
@@ -117,3 +117,7 @@ public class Mahasiswa{
 		return nilaiAkhir;
 	}
 }
+// jadi alur programnya adalah:
+// Data yang sudah kamu isi akan pergi ke Mahasiswa.java, lalu ke MahasiswaRepository.java,
+// lalu ke MahasiswaService.java, dan terakhir ke MahasiswaController.java.
+// di mahasiswa.java, kamu membuat atribut-atribut yang akan digunakan untuk menyimpan data

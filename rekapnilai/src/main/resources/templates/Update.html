@@ -1,14 +1,13 @@
 <!DOCTYPE html>
-<html style="font-size: 16px;" lang="en"><head>
+<html style="font-size: 16px;" lang="en" xmlns:th="https://www.thymeleaf.org"><head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="utf-8">
     <meta name="keywords" content="Pembaruan Nilai">
     <meta name="description" content="">
     <title>Update</title>
-    <link rel="stylesheet" href="nicepage.css" media="screen">
-<link rel="stylesheet" href="Update.css" media="screen">
-    <script class="u-script" type="text/javascript" src="jquery.js" defer=""></script>
-    <script class="u-script" type="text/javascript" src="nicepage.js" defer=""></script>
+    <link rel="stylesheet" href="/css/nicepage.css" media="screen">
+<link rel="stylesheet" href="/css/Update.css" media="screen">
+    <script class="u-script" type="text/javascript" src="/js/nicepage.js" defer=""></script>
     <meta name="generator" content="Nicepage 5.8.2, nicepage.com">
     <meta name="referrer" content="origin">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,500,500i,600,600i,700,700i,800,800i">
@@ -62,21 +61,21 @@
                       </div>
                       <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                         <div class="u-container-layout u-similar-container u-container-layout-3">
-                          <h5 class="u-text u-text-5"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-2"><img src="images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai Tugas
+                          <h5 class="u-text u-text-5"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-2"><img src="/images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai Tugas
                           </h5>
                           <p class="u-text u-text-6"> Penilaian yang diberikan kepada mahasiswa berdasarkan hasil kerja atau tugas-tugas yang diberikan selama kuliah.</p>
                         </div>
                       </div>
                       <div class="u-container-style u-list-item u-repeater-item u-shape-rectangle">
                         <div class="u-container-layout u-similar-container u-container-layout-4">
-                          <h5 class="u-text u-text-7"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-3"><img src="images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai UTS
+                          <h5 class="u-text u-text-7"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-3"><img src="/images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai UTS
                           </h5>
                           <p class="u-text u-text-8"> Penilaian yang diberikan kepada mahasiswa berdasarkan hasil ujian pada pertengahan semester.</p>
                         </div>
                       </div>
                     </div>
                   </div>
-                  <h5 class="u-text u-text-9"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-4"><img src="images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai UAS
+                  <h5 class="u-text u-text-9"><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-4"><img src="/images/684831-0c6e7a0f.png" alt=""></span>&nbsp;Nilai UAS
                   </h5>
                   <p class="u-text u-text-10"> Penilaian yang diberikan kepada mahasiswa berdasarkan hasil ujian pada akhir semester.</p>
                 </div>
@@ -84,29 +83,38 @@
               <div class="u-container-style u-layout-cell u-right-cell u-size-31-lg u-size-31-md u-size-31-sm u-size-31-xs u-size-33-xl u-layout-cell-2">
                 <div class="u-container-layout u-container-layout-5">
                   <div class="u-expanded-width u-form u-form-1">
-                    <form action="https://forms.nicepagesrv.com/v2/form/process" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" source="email" name="form">
+                    <form action="#" th:action="@{/mahasiswa/saveMahasiswa}" th:object="${mahasiswa}" method="post" class="u-clearfix u-form-spacing-30 u-form-vertical u-inner-form" style="padding: 10px" name="form">
+                      <input type="hidden" th:field="*{id}"/>
+                      <div class="u-form-address u-form-group u-form-group-2">
+                        <label for="address-451f" class="u-label u-text-body-alt-color u-label-2">Nama</label>
+                        <input type="text" th:field="*{namaMhs}" placeholder="Masukkan Nama" id="address-451f" name="nama" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
+                      </div>
                       <div class="u-form-email u-form-group">
-                        <label for="email-319a" class="u-label u-text-body-alt-color u-label-1">NIM</label>
-                        <input type="email" placeholder="Masukkan NIM" id="email-319a" name="email" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="">
+                        <label for="address-452f" class="u-label u-text-body-alt-color u-label-1">NIM</label>
+                        <input type="text" th:field="*{NIM}" placeholder="Masukkan NIM" id="email-319a" name="nim" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="">
+                      </div>
+                      <div class="u-form-address u-form-group u-form-group-2">
+                        <label for="address-453f" class="u-label u-text-body-alt-color u-label-2">Kelas</label>
+                        <input type="text" th:field="*{kelas}" placeholder="Masukkan Kelas" id="address-453f" name="kelas" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-form-address u-form-group u-form-group-2">
                         <label for="address-452f" class="u-label u-text-body-alt-color u-label-2">Nilai Tugas</label>
-                        <input type="text" placeholder="Masukkan Nilai Tugas" id="address-452f" name="address" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
+                        <input type="text" th:field="*{nilaiTugas}" placeholder="Masukkan Nilai Tugas" id="address-452f" name="address" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-form-group u-form-group-3">
                         <label for="text-7a9e" class="u-label u-text-body-alt-color u-label-3">Nilai UTS</label>
-                        <input type="text" placeholder="Masukkan Nilai UTS" id="text-7a9e" name="nilaiuts" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
+                        <input type="text" th:field="*{nilaiUts}" placeholder="Masukkan Nilai UTS" id="text-7a9e" name="nilaiuts" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-form-group u-form-group-4">
                         <label for="text-c98f" class="u-label u-text-body-alt-color u-label-4">Nilai UAS</label>
-                        <input type="text" placeholder="Masukkan Nilai UAS" id="text-c98f" name="nilaiuas" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
+                        <input type="text" th:field="*{nilaiUas}" placeholder="Masukkan Nilai UAS" id="text-c98f" name="nilaiuas" class="u-border-2 u-border-no-left u-border-no-right u-border-no-top u-border-white u-input u-input-rectangle" required="required">
                       </div>
                       <div class="u-align-left u-form-group u-form-submit">
-                        <a href="#" class="u-active-white u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-white u-palette-3-base u-radius-50 u-btn-1">Submit</a>
+                        <p style="color: red; font-size:small;" th:if="${errorMsg}" th:text="${errorMsg}"></p>
+                        <p style="color: red; font-size:small;" th:if="${badReqMsg}" th:text="${badReqMsg}"></p>
+                        <button type="submit" class="u-active-white u-border-none u-btn u-btn-round u-btn-submit u-button-style u-hover-white u-palette-3-base u-radius-50 u-btn-1">Submit</button>
                         <input type="submit" value="submit" class="u-form-control-hidden">
                       </div>
-                      <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent. </div>
-                      <div class="u-form-send-error u-form-send-message"> Unable to send your message. Please fix errors then try again. </div>
                       <input type="hidden" value="" name="recaptchaResponse">
                       <input type="hidden" name="formServices" value="782070e2c7e28fb082ee53905af9d125">
                     </form>
@@ -115,7 +123,7 @@
               </div>
             </div>
           </div>
-        </div><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-5" data-href="Home.html"><img src="images/318477-89696313.png" alt=""></span>
+        </div><span class="u-file-icon u-icon u-text-custom-color-29 u-icon-5" data-href="/mahasiswa/home"><img src="/images/318477-6f849ed9.png" alt=""></span>
       </div>
     </section>
     
