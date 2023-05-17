@@ -75,22 +75,28 @@ public class MahasiswaController {
     }
 
     @PostMapping(value = "/create")
-    public String submitForm(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa) {
-        //Menyimpan mahasiswa ke database
-        //Jika nilai akhir lebih dari 100 atau kurang dari 0, maka akan dianggap tidak valid
-        //Dengan menggunakan exception handling, kita bisa mengatasi error tersebut
-//        try{
-//            if(mahasiswa.getNilaiAkhir() > 100 || mahasiswa.getNilaiAkhir() < 0){
-//                throw new Exception("Nilai akhir tidak valid ! (Nilai akhir harus 0 - 100)");
-//            }
-//            mahasiswaService.addMahasiswa(mahasiswa);
-//            return "redirect:/mahasiswa/home";
-//        }catch (Exception e) {
-//            System.out.println(e.getMessage());
-//            return "redirect:/mahasiswa/create?error";
-//        }
-        mahasiswaService.addMahasiswa(mahasiswa);
-        return "redirect:/mahasiswa/home";
+    public String submitForm(@ModelAttribute("mahasiswa") Mahasiswa mahasiswa, BindingResult bindingResult, Model model) {
+    	try {
+    		//Jika nilai akhir lebih dari 100 atau kurang dari 0, maka akan dianggap tidak valid
+    		if (mahasiswa.getNilaiTugas() < 0 || mahasiswa.getNilaiTugas() > 100 ||
+    				mahasiswa.getNilaiUts() < 0 || mahasiswa.getNilaiUts() > 100 ||
+    				mahasiswa.getNilaiUas() < 0 || mahasiswa.getNilaiUas() > 100) {
+    			throw new InvalidNilaiException("Masukan tidak valid");
+    		}
+            if (bindingResult.hasErrors()) {
+                throw new BadReqEx("Salah tipe bang");
+            }
+
+    		//Menyimpan mahasiswa ke database
+            mahasiswaService.addMahasiswa(mahasiswa);
+            return "redirect:/mahasiswa/home";
+		} catch (InvalidNilaiException e) {
+            model.addAttribute("errorMsg", e.getLocalizedMessage());
+            return "Create";
+        } catch (BadReqEx e) {
+            model.addAttribute("badReqMsg", e.getLocalizedMessage());
+            return "Create";
+        }
     }
 
     @GetMapping(value = "/edit/{id}")
